@@ -23,9 +23,11 @@ mongoose.connect(CONNECTION_URL, {useNewUrlParser: true, useUnifiedTopology: tru
 .then(() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)))
 .catch((error) => console.log(error));
 
-app.post('/',async(req,res) => {
-
-    const {email} =req.body;
+app.post('/sendEmail',async(req,res) => {
+    
+    const email =req.body.myEmail;
+    console.log(email);
+    var OTP = Math.floor(1000 + Math.random() * 9000);
 
     let transporter = nodemailer.createTransport({
         service: "gmail",
@@ -38,11 +40,11 @@ app.post('/',async(req,res) => {
       });
 
       const info = await transporter.sendMail({
-        from: '"Fred Foo 👻" <foo@example.com>', // sender address
-        to: "abhikhya.ashi@gmail.com", // list of receivers
-        subject: "Hello ✔", // Subject line
-        text: "Hello world?", // plain text body
-        html: "<b>Hello world?</b>", // html body
+        from: '"Abhikhya Ashi 👻" <abhikhya.ashi@gmail.com>', // sender address
+        to: email, // list of receivers
+        subject: "Email Verification OTP ✔", // Subject line
+        text: "Email Verification", // plain text body
+        html: `<b>Your One Time Password is: ${OTP}</b>`, // html body
       });
     
       console.log("Message sent: %s", info.messageId);
