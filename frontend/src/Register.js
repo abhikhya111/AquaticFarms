@@ -169,7 +169,7 @@ export default function Register() {
                   <div >
                     <span style={{ color: "red" }}>OTP sent to your Email Address</span>
                     <MDBInput wrapperClass='mb-4' placeholder='Enter OTP' id='form3' type='text' />
-                    <OTPInput value={OTP} onChange={setOTP} autoFocus OTPLength={4} otpType="number" disabled={false}/>
+                    <OTPInput secure value={OTP} onChange={setOTP} autoFocus OTPLength={4} otpType="number" disabled={false}/>
                     <ResendOTP onResendClick={() => console.log("Resend clicked")} />
                   </div> : null}
 

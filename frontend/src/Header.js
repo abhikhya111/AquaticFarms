@@ -40,7 +40,7 @@ export default function Header() {
 
                     <div class="ht-right" style={{paddingTop:"15px"}}>
 
-                        <Link style={{paddingTop:"15px", color:"#354F7E",fontWeight:"600"  }} to="/login">Login</Link><Link to="register" style={{paddingTop:"15px", color:"#354F7E",fontWeight:"600" }}> | Register</Link>
+                        <Link style={{paddingTop:"15px", color:"#354F7E",fontWeight:"600"  }} to="/login">Login</Link><Link to="/register" style={{paddingTop:"15px", color:"#354F7E",fontWeight:"600" }}> | Register</Link>
 
                     </div>
 
@@ -206,27 +206,15 @@ export default function Header() {
 
                         <ul style={{backgroundColor:"#354F7E"}}>
 
-                            <li class="active"><a href="#">Home</a></li>
+                            <li class="active"><Link to="/">Home</Link></li>
 
-                            <li ><a href="#">Shop</a></li>
+                            <li ><Link to="/aboutUs">About Us</Link></li>
 
-                            <li><a href="#">Collection</a>
+                            <li><Link to="/ourServices">Our Services</Link></li>
 
-                                <ul class="dropdown">
+                            <li><a href="#">Our Team</a></li>
 
-                                    <li><a href="#">Men's</a></li>
-
-                                    <li><a href="#">Women's</a></li>
-
-                                    <li><a href="#">Kid's</a></li>
-
-                                </ul>
-
-                            </li>
-
-                            <li><a href="#">Blog</a></li>
-
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Contact Us</a></li>
 
                             <li><a href="#">Pages</a>
 
@@ -247,17 +235,6 @@ export default function Header() {
                                 </ul>
 
                             </li>
-
-                            <li>
-
-                            <a href="#" class="login-panel"><i class="fa fa-user" style={{marginRight:"10px"}}></i>Login</a>
-
-
-
-                            </li>
-
-                            
-
                         </ul>
 
                     </nav>

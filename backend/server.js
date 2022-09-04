@@ -44,7 +44,7 @@ app.post('/sendEmail',async(req,res) => {
         to: email, // list of receivers
         subject: "Email Verification OTP ✔", // Subject line
         text: "Email Verification", // plain text body
-        html: `<b>Your One Time Password is: ${OTP}</b>`, // html body
+        html: `<b> ${OTP} : is your One Time Password for registration at <a href="/google.com">aquaticfarms.in</a></b>`, // html body
       });
     
       console.log("Message sent: %s", info.messageId);
